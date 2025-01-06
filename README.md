@@ -2,18 +2,6 @@
 
 This project involves **API testing for an e-commerce platform** using **Postman**. The goal of the project is to validate the **GET** request to retrieve a list of products from the platform's catalog.
 
-## Installation and Setup
-
-To set up and run the Postman collection:
-
-1. Clone this repository to your local machine:
-    ```bash
-    git clone https://github.com/utkarshasinha/e-commerce-api-testing.git
-    ```
-
-2. Open **Postman** and import the collection from the **API-utkarsha** workspace. You can import it directly by navigating to the `api` collection within that workspace.
-3. If required, set up any necessary **environment variables** or **authentication tokens** specific to your project configuration.
-
 ## API Endpoints Tested
 
 - **GET /products** - Retrieve a list of products available for sale on the e-commerce platform. This validates the correct functioning of the product listing.
@@ -26,11 +14,14 @@ To set up and run the Postman collection:
 
 ## Project Status
 
-As of now, the testing focuses solely on the **GET /products** endpoint, ensuring that it returns the correct list of products in the expected JSON format, and verifying response time.
+As of now, the testing focuses solely on the **GET /products** endpoint, ensuring that it returns the correct list of products in the expected JSON format and verifying response time.
 
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more details.
 
+## Check the Project in Postman
 
+You can explore the collection and test the API directly using Postman by visiting my workspace [apiutkarsha Postman Workspace](https://www.postman.com/utkarshasinha/apiutkarsha/overview).
+Additionally, you can use the direct collection link: [E-commerce API Testing Collection](https://www.postman.com/utkarshasinha/apiutkarsha/collection/jvpj8xn/api?action=share&creator=40805721) for easier access.
 
