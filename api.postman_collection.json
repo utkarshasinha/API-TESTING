@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "ac6ed5c2-d3b4-42a6-a1b9-fa400e10aac0",
+		"name": "api",
+		"description": "This collection focuses on testing the **GET /products** endpoint of the e-commerce platform. It performs validation on response formats, status codes, and response times to ensure the API is functioning as expected.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40805721",
+		"_collection_link": "https://www.postman.com/utkarshasinha/apiutkarsha/collection/jvpj8xn/api?action=share&source=collection_link&creator=40805721"
+	},
+	"item": [
+		{
+			"name": "GET posts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response is valid JSON\", function () {\r",
+							"    var isJsonValid = false;\r",
+							"    try {\r",
+							"        JSON.parse(pm.response.text());\r",
+							"        isJsonValid = true;\r",
+							"    } catch (e) {\r",
+							"        isJsonValid = false;\r",
+							"    }\r",
+							"    pm.expect(isJsonValid).to.be.true;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is under 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(916);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Title is a non-empty string\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    jsonData.forEach(function(post) {\r",
+							"        pm.expect(post.title).to.be.a('string');\r",
+							"        pm.expect(post.title).to.not.be.empty;\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"const schema = {\r",
+							"    \"type\": \"array\",\r",
+							"    \"items\": {\r",
+							"        \"type\": \"object\",\r",
+							"        \"properties\": {\r",
+							"            \"userId\": { \"type\": \"number\" },\r",
+							"            \"id\": { \"type\": \"number\" },\r",
+							"            \"title\": { \"type\": \"string\" },\r",
+							"            \"body\": { \"type\": \"string\" }\r",
+							"        },\r",
+							"        \"required\": [\"userId\", \"id\", \"title\", \"body\"]\r",
+							"    }\r",
+							"};\r",
+							"\r",
+							"pm.test('Response matches schema', function () {\r",
+							"    pm.response.to.have.jsonSchema(schema);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains required fields: userId, id, title\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    jsonData.forEach(function(post) {\r",
+							"        pm.expect(post).to.have.property('userId');\r",
+							"        pm.expect(post).to.have.property('id');\r",
+							"        pm.expect(post).to.have.property('title');\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Next page exists if available\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.nextPage).to.not.be.null;\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET posts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status is 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response is valid JSON\", function () {\r",
+							"    var isJsonValid = false;\r",
+							"    try {\r",
+							"        JSON.parse(pm.response.text());\r",
+							"        isJsonValid = true;\r",
+							"    } catch (e) {\r",
+							"        isJsonValid = false;\r",
+							"    }\r",
+							"    pm.expect(isJsonValid).to.be.true;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is under 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(916);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Title is a non-empty string\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    jsonData.forEach(function(post) {\r",
+							"        pm.expect(post.title).to.be.a('string');\r",
+							"        pm.expect(post.title).to.not.be.empty;\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"const schema = {\r",
+							"    \"type\": \"array\",\r",
+							"    \"items\": {\r",
+							"        \"type\": \"object\",\r",
+							"        \"properties\": {\r",
+							"            \"userId\": { \"type\": \"number\" },\r",
+							"            \"id\": { \"type\": \"number\" },\r",
+							"            \"title\": { \"type\": \"string\" },\r",
+							"            \"body\": { \"type\": \"string\" }\r",
+							"        },\r",
+							"        \"required\": [\"userId\", \"id\", \"title\", \"body\"]\r",
+							"    }\r",
+							"};\r",
+							"\r",
+							"pm.test('Response matches schema', function () {\r",
+							"    pm.response.to.have.jsonSchema(schema);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains required fields: userId, id, title\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    jsonData.forEach(function(post) {\r",
+							"        pm.expect(post).to.have.property('userId');\r",
+							"        pm.expect(post).to.have.property('id');\r",
+							"        pm.expect(post).to.have.property('title');\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Next page exists if available\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.nextPage).to.not.be.null;\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
