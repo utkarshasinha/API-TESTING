@@ -1,11 +1,29 @@
-# E-Commerce API Testing
+# E-Commerce API Testing Project
 
-## Step 1: Set up the Postman workspace and collection
+## Overview
+This project involves API testing for an e-commerce platform using **Postman**. The goal is to validate endpoints such as product listing, adding items to the cart, and checkout processes.
 
-### Workspace Creation:
-- Create a new workspace in Postman named "API Testing - E-Commerce" to organize all project-related activities.
+## Installation and Setup
+To use the Postman collection:
 
-### Collection Setup:
-- Create a collection within the workspace called "E-Commerce API Test Suite" where all the API requests and their respective tests will be stored.
+1. Clone this repository.
+    ```bash
+    git clone https://github.com/your-username/e-commerce-api-testing.git
+    ```
 
-This will be the foundation for testing various API endpoints (like products, cart, and checkout) for an e-commerce platform.
+2. Open **Postman** and import the collection from the `e-commerce-api-testing` directory.
+3. Set up any necessary environment variables or authentication tokens as per your project requirements.
+
+## API Endpoints Tested
+- **GET /products** - Retrieve a list of products.
+- **POST /cart** - Add an item to the shopping cart.
+- **POST /checkout** - Complete the checkout process.
+
+## Technologies Used
+- **Postman**: For API testing
+- **Git & GitHub**: For version control
+- **JavaScript**: For writing Postman tests
+
+## License
+Distributed under the MIT License. See `LICENSE` for more information.
+
