@@ -17,8 +17,6 @@ To use the Postman collection:
 ## API Endpoints Tested
 
 - **GET /products** - Retrieve a list of products available in the store.
-- **POST /cart** - Add an item to the shopping cart.
-- **POST /checkout** - Complete the checkout process.
 
 ## Technologies Used
 
