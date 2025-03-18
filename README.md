@@ -1,6 +1,7 @@
 # E-commerce API Testing Project
 
 This project involves **API testing for an e-commerce platform** using **Postman**. The goal of the project is to validate the **GET** request to retrieve a list of products from the platform's catalog.
+This project highlights my experience in testing APIs, inspired by a seminar on software testing. It shows my ability to create test cases, debug issues, and ensure smooth functionality for web projects.
 
 ## API Endpoints Tested
 
